@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 // import WhatsAppButton from './components/WhatsAppButton';
 // import TelegramButton from './components/TelegramButton';
 import { APP_NAME, /* TELEGRAM_BOT_LINK, WHATSAPP_LINK, */ CONTACT_EMAIL, LINKEDIN_PROFILE_URL } from './constants';
+import { Analytics } from "@vercel/analytics/react";
 
 const App: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -87,6 +88,7 @@ const App: React.FC = () => {
       />
       {/* <WhatsAppButton whatsappLink={WHATSAPP_LINK} />
       <TelegramButton telegramLink={TELEGRAM_BOT_LINK} /> */}
+      <Analytics />
     </div>
   );
 };
