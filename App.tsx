@@ -6,9 +6,9 @@ import BenefitsSection from './components/BenefitsSection';
 import AutomationImpactSection from './components/AutomationImpactSection'; // Added import
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
-import TelegramButton from './components/TelegramButton';
-import { APP_NAME, TELEGRAM_BOT_LINK, WHATSAPP_LINK, CONTACT_EMAIL, LINKEDIN_PROFILE_URL } from './constants';
+// import WhatsAppButton from './components/WhatsAppButton';
+// import TelegramButton from './components/TelegramButton';
+import { APP_NAME, /* TELEGRAM_BOT_LINK, WHATSAPP_LINK, */ CONTACT_EMAIL, LINKEDIN_PROFILE_URL } from './constants';
 
 const App: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -71,7 +71,7 @@ const App: React.FC = () => {
       </header>
 
       <main className="flex-grow pt-20"> {/* Ensure padding-top accounts for fixed header height */}
-        <Hero appName={APP_NAME} telegramLink={TELEGRAM_BOT_LINK} />
+        <Hero appName={APP_NAME} /* telegramLink={TELEGRAM_BOT_LINK} */ />
         <ServicesSection />
         <HowItWorksSection />
         <BenefitsSection />
@@ -82,11 +82,11 @@ const App: React.FC = () => {
       <Footer
         appName={APP_NAME}
         contactEmail={CONTACT_EMAIL}
-        telegramLink={TELEGRAM_BOT_LINK}
+        /* telegramLink={TELEGRAM_BOT_LINK} */
         linkedInUrl={LINKEDIN_PROFILE_URL}
       />
-      <WhatsAppButton whatsappLink={WHATSAPP_LINK} />
-      <TelegramButton telegramLink={TELEGRAM_BOT_LINK} />
+      {/* <WhatsAppButton whatsappLink={WHATSAPP_LINK} />
+      <TelegramButton telegramLink={TELEGRAM_BOT_LINK} /> */}
     </div>
   );
 };

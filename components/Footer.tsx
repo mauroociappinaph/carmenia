@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { TelegramIcon } from './icons/TelegramIcon';
 import { EmailIcon } from './icons/EmailIcon';
@@ -9,7 +8,7 @@ import { PRIMARY_COLOR, APP_NAME } from '../constants';
 interface FooterProps {
   appName: string;
   contactEmail: string;
-  telegramLink: string;
+  telegramLink?: string;
   linkedInUrl: string;
   // instagramUrl: string; // Removed
 }
@@ -29,27 +28,29 @@ const Footer: React.FC<FooterProps> = ({ appName, contactEmail, telegramLink, li
           <div>
             <h3 className="text-xl font-semibold text-white mb-3">Contacto</h3>
             <div className="flex justify-center md:justify-start space-x-4">
-              <a 
-                href={`mailto:${contactEmail}`} 
-                aria-label="Contáctanos por Email" 
+              <a
+                href={`mailto:${contactEmail}`}
+                aria-label="Contáctanos por Email"
                 className="text-gray-400 hover:text-[#6eb2ed] transition-colors"
               >
                 <EmailIcon className="w-6 h-6" />
               </a>
-              <a 
-                href={telegramLink} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Contáctanos por Telegram" 
-                className="text-gray-400 hover:text-[#6eb2ed] transition-colors"
-              >
-                <TelegramIcon className="w-6 h-6" />
-              </a>
-              <a 
-                href={linkedInUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="LinkedIn" 
+              {telegramLink && (
+                <a
+                  href={telegramLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors duration-200"
+                  aria-label="Contáctanos por Telegram"
+                >
+                  <TelegramIcon className="w-6 h-6" />
+                </a>
+              )}
+              <a
+                href={linkedInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="text-gray-400 hover:text-[#6eb2ed] transition-colors"
               >
                 <LinkedInIcon className="w-6 h-6" />
