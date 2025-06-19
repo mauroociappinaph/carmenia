@@ -61,7 +61,7 @@ const App: React.FC = () => {
                   key={link.href}
                   href={link.href}
                   className="text-gray-700 hover:text-[#6eb2ed] transition-colors py-2 block"
-                  onClick={() => setIsMobileMenuOpen(false)} // Close menu on click
+                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
